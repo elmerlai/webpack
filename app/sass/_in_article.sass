@@ -1,0 +1,497 @@
+/* in_article.css ==============================================*/
+.article_list
+	.detail_banner
+		min-height: 450px
+.ajax_slider
+	min-height: 450px
+	.slider
+		.text
+			position: absolute
+			left: 50%
+			top: 130px
+			width: 100%
+			max-width: 700px
+			padding: 0 3%
+			text-align: center
+			+transform(translateX(-50%))
+			+textShadow
+			+border_box
+			color: #fff
+			h1
+				font-size: 28px
+			a
+				+btnTrans
+				color: #fff
+				&:hover
+					color: $c_red
+			.author
+				display: inline-block
+				width: auto
+				min-height: 80px
+				margin: 0 auto 50px auto
+				padding-left: 110px
+				text-align: left
+				.photo
+					width: 80px
+					height: 80px
+					+boxShadow
+				div
+					padding-top: 15px
+				i
+					margin-bottom: 5px
+					color: #fff
+					font-size: 18px
+				p
+					font-size: 22px
+			.word
+				margin-bottom: 50px
+				text-align: left
+				font-size: 18px
+				color: #fff
+
+.ajax_slider_btn
+	position: absolute
+	top: 50%
+	z-index: 0
+	width: 180px
+	height: 180px
+	border: 1px solid #fff
+	overflow: hidden
+	cursor: pointer
+	border-radius: 5px
+	+transform(translateY(-50%))
+	+boxShadow
+	&.prev
+		left: 30px
+		&:before
+			background-position: 0 0
+	&.next
+		right: 30px
+		&:before
+			background-position: 100% 0
+	&:before
+		content: ""
+		opacity: .7
+		display: block
+		position: absolute
+		left: 50%
+		top: 30px
+		z-index: 2
+		width: 32px
+		height: 55px
+		+bg_img(slider_btn,png,no-repeat)
+		+background-size(auto 100%)
+		+transform(translateX(-50%))
+		+btnTrans
+	&:hover
+		&:before
+			opacity: 1
+		&.prev
+			&:before
+				margin-left: -10px
+		&.next
+			&:before
+				margin-left: 10px
+		.pic
+			+transform(scale(1.15))
+	.pic
+		position: relative
+		z-index: 1
+		width: 100%
+		height: 100%
+		background-position: center
+		+background-size(cover)
+		+transition($sec_4 ease)
+	.author
+		position: absolute
+		left: 0
+		bottom: 0
+		z-index: 1
+		width: 100%
+		padding: 10px 20px
+		text-align: center
+		+border_box
+		+background(linear-gradient(to top, rgba(0,0,0,.5), rgba(0,0,0,0)))
+		// &:before
+		// 	content: ""
+		// 	position: absolute
+		// 	left: 0
+		// 	top: 6px
+		// 	width: 16px
+		// 	height: 30px
+		// 	+bg_img(slider_btn,png,no-repeat)
+		// 	+background-size(auto 100%)
+		.photo
+			display: inline-block
+			position: relative
+			width: 35px
+			height: 35px
+			margin-right: 10px
+			+boxShadow
+		div
+			display: inline-block
+			color: #fff
+			text-align: left
+			+textShadow
+			i
+				margin-bottom: 3px
+				font-size: 13px
+			p
+				font-size: 16px
+	// h3
+	// 	position: absolute
+	// 	left: 0
+	// 	bottom: 0
+	// 	z-index: 2
+	// 	padding: 10px 12px
+	// 	font-size: 18px
+	// 	color: #fff
+	// 	+background(linear-gradient(to top, rgba(0,0,0,.5), rgba(0,0,0,0)))
+
+.article_group
+	position: relative
+	z-index: 1
+	width: 100%
+	padding-bottom: 120px
+	&:before
+		content: ""
+		display: block
+		position: absolute
+		left: 0
+		top: 100px
+		width: 100%
+		height: 100%
+		+bg_mix(rgba(255,255,255,1),mountain_bg,png,no-repeat center bottom)
+		+background-size(100% auto)
+	.group
+		max-width: 1000px
+		margin-top: -100px
+	.item
+		position: relative
+		float: left
+		width: 48%
+		margin-right: 4%
+		margin-bottom: 30px
+		border: 1px solid #fff
+		background: #fff
+		+boxShadow
+		+border_box
+		overflow: hidden
+		&:nth-child(2n)
+			margin-right: 0
+		&:hover
+			.pic
+				+transform(scale(1.2))
+		.pic
+			display: block
+			width: 100%
+			height: 0
+			padding-bottom: 56%
+			background-position: center
+			background-repeat: no-repeat
+			+background-size(cover)
+			+transition($sec_4 ease)
+		.text
+			position: absolute
+			left: 0
+			bottom: 0
+			width: 100%
+			padding: 20px 30px
+			+border_box
+			+background(linear-gradient(to top, rgba(0,0,0,.7), rgba(0,0,0,0)))
+			a, p, i
+				color: #fff
+			div
+				padding-top: 2px
+			i
+				margin-bottom: 3px
+			.author
+				margin-bottom: 15px
+			h3
+				font-size: 24px
+
+.article_more
+	display: inline-block
+	position: absolute
+	left: 50%
+	bottom: -100px
+	z-index: 10
+	width: 350px
+	padding: 8px 0
+	margin-left: -175px
+	text-align: center
+	background: $c_red
+	color: #fff
+	+border-radius(5px)
+	+transition($sec_2 ease)
+	cursor: pointer
+	&:hover
+		color: #fff
+		background: $c_purple
+	&.trans
+		opacity: 1
+		bottom: 40px
+
+.article_text
+	padding-bottom: 40px
+	.share
+		margin-bottom: 30px
+	.author
+		padding-left: 90px
+		margin-top: -4px
+		.photo
+			width: 70px
+			height: 70px
+			border: 1px solid #ddd
+		div
+			padding-top: 10px
+			i
+				margin-bottom: 3px
+				font-size: 18px
+			p
+				font-size: 24px
+	.author_info
+		width: 100%
+		margin-top: 30px
+	.list
+		clear: both
+		width: 100%
+		margin-top: 30px
+		padding-top: 20px
+		border-top: 1px dotted #ddd
+		h3
+			margin-bottom: 15px
+		a
+			position: relative
+			display: block
+			padding: 10px 0 10px 30px
+			font-size: 16px
+			border-bottom: 1px dotted #ccc
+			+border_box
+			&:before
+				content: ""
+				position: absolute
+				left: 2px
+				top: 17px
+				width: 10px
+				height: 10px
+				border: 1px solid $c_red
+				border-radius: 50%
+				+btnTrans
+			&:hover
+				color: $c_red
+				&:before
+					border-color: $c_red
+					background: $c_red
+	
+	.btn_wrap
+		padding-top: 30px
+		margin-top: 30px
+		text-align: center
+		border-top: 1px dotted #ddd
+
+	.message
+		float: left
+		margin-top: 30px
+		padding-top: 20px
+		border-top: 1px dotted #ddd
+		h3
+			margin-bottom: 30px
+		.fb-comments
+			width: 100%
+			iframe
+				width: 100%	
+				._2pi8
+					padding: 0
+
+.overlay_wrap
+	.article_text
+		.main_right
+			padding-top: 30px
+			margin-top: 10px
+			border-top: 1px dotted #ddd
+		.list
+			a
+				&:last-child
+					border: none
+@media screen and (max-width: 1200px)
+	.ajax_slider
+		.slider
+			.text
+				max-width: 500px
+				.author
+					min-height: 60px
+					padding-left: 90px
+					margin-bottom: 30px
+					.photo
+						width: 60px
+						height: 60px
+					div
+						padding-top: 10px
+					i
+						font-size: 16px
+					p
+						font-size: 20px
+				.word
+					line-height: 1.5em
+					margin-bottom: 25px
+					font-size: 16px
+				h1
+					font-size: 24px
+
+	.ajax_slider_btn
+		width: 130px
+		height: 130px
+		&.prev
+			left: 15px
+		&.next
+			right: 15px
+		&:before
+			display: none
+		.author
+			.photo
+				margin-right: 0
+		h3
+			line-height: 1.5em
+			font-size: 15px
+@media screen and (max-width: 1050px)
+	.ajax_slider_btn
+		.author
+			.photo
+				top: 0
+
+	.article_text
+		.btn_wrap, .message
+			padding-top: 20px
+			margin-top: 20px
+		.message
+			h3
+				margin-bottom: 20px
+@media screen and (max-width: 950px)
+	.ajax_slider
+		.slider
+			.text
+				top: 80px
+	.ajax_slider_btn
+		width: 32px
+		height: 55px
+		background: none
+		border: none
+		box-shadow: none
+		+bg_img(slider_btn,png,no-repeat)
+		+background-size(auto 100%)
+		+btnTrans
+		&.prev
+			left: 20px
+			background-position: 0 0
+		&.next
+			right: 20px
+			background-position: 100% 0
+		&:hover
+			&.prev
+				left: 10px
+			&.next
+				right: 10px
+		&:before, .pic, h3
+			display: none
+		.author
+			display: none
+@media screen and (max-width: 900px)
+	.article_text
+		.list, .btn_wrap, .message
+			border-top: 1px solid #666
+		.main_left
+			padding-bottom: 10px
+		.main_right
+			border-top: 1px solid #666 !important
+		.author
+			text-align: center
+			width: auto
+			padding: 0
+			.photo, div
+				display: inline-block
+			.photo
+				position: relative
+				width: 60px
+				height: 60px
+				margin-right: 20px
+			div
+				padding-top: 3px
+		.author_info
+			margin-top: 20px
+		.list
+			margin-top: 20px
+			a
+				&:last-child
+					border: none
+		.btn_wrap, .message
+			padding-top: 20px
+			margin-top: 20px
+		.message
+			margin-top: 10px
+			h3
+				margin-bottom: 20px
+@media screen and (max-width: 800px)
+	.article_group
+		.item
+			.text
+				padding: 10px 15px
+				.author
+					margin-bottom: 10px
+				h3
+					font-size: 18px
+
+@media screen and (max-width: 700px)
+	.ajax_slider
+		.slider
+			.text
+				left: 0
+				top: 50%
+				max-width: none
+				padding: 0 90px
+				+transform(translate(0,-50%))
+	.ajax_slider_btn
+		width: 18px
+		height: 30px
+	.article_group
+		padding-top: 30px
+		.group
+			margin-top: 0px
+
+@media screen and (max-width: 600px)
+	.article_list
+		.detail_banner
+			height: auto
+			min-height: 0
+			&.fixed
+				.ajax_slider
+					position: relative
+					height: auto
+	.ajax_slider
+		
+		min-height: 0
+		.slider
+			.text
+				position: relative
+				padding: 30px 70px
+				+transform(translate(0))
+	.article_group
+		.item
+			width: 100%
+			margin-right: 0
+	
+	.article_text
+		.list, .message
+			h3
+				text-align: center
+
+
+@media screen and (max-height: 800px)
+	.article_group
+		padding-top: 40px
+		.group
+			margin-top: 0px
+
+	@media screen and (max-width: 600px)
+		.article_group
+			padding-top: 30px

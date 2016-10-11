@@ -1,0 +1,132 @@
+/* media.css ==============================================*/
+@media screen and (max-width: 1230px)
+	.detail_banner
+		.title
+			left: 0
+			+transform(translateX(0))
+			+border_box
+			h2
+				margin-bottom: 5px
+				font-size: 22px
+			h1
+				font-size: 34px
+
+@media screen and (max-width: 1050px)
+	.author
+		padding-left: 50px
+		.photo
+			top: 6px
+			width: 35px
+			height: 35px
+		p
+			font-size: 16px
+
+	.parallax_con
+		.parallax_group
+			background-attachment: scroll
+			background-size: 100% auto
+			background-position: center 0
+			background-color: $c_purple
+			.bg
+				height: 45vh
+	
+	.detail_main
+		.main_left
+			width: 70%
+		.main_right
+			width: 25%
+@media screen and (max-width: 950px)
+	.in_content
+		padding-top: 55px
+
+	.detail_banner
+		.title
+			h2
+				margin-bottom: 5px
+				font-size: 22px
+			h1
+				font-size: 28px
+
+@media screen and (max-width: 900px)
+	.detail_main
+		.main_left, .main_right
+			width: 100%
+			clear: both
+		.main_right
+			padding-top: 30px	
+			border-top: 1px dotted #ddd
+
+@media screen and (max-width: 780px)
+	.author
+		// float: left
+		// max-width: 40%
+		// padding-right: 4%
+		// border-right: 1px solid #fff
+		p
+			margin-bottom: 2px
+	.parallax_con
+		.parallax_group
+			padding-bottom: 0
+			background: none !important
+			.bg
+				width: 100%
+				height: auto
+				img
+					display: block
+
+@media screen and (max-width: 600px)
+	.detail_banner
+		.title
+			text-align: center
+			h2
+				margin-bottom: 0
+				font-size: 18px
+			h1
+				font-size: 24px
+	
+	.detail_main
+		.main_right
+			padding-top: 25px
+@media screen and (max-width: 480px)
+	.title_m
+		text-align: left
+		text-indent: 20px
+	
+	.detail_banner
+		.title
+			h2
+				font-size: 16px
+			h1
+				font-size: 20px
+
+@media screen and (max-width: 450px)		
+	.page_btn
+		font-size: 16px
+		&.prev, &.next
+			background-position-y: -6px
+			+background-size(auto 40px)
+		&.prev
+			margin-right: 20px
+		&.next
+			margin-left: 20px
+
+@media screen and (max-width: 400px)
+	.author
+		.photo
+			top: 2px
+			width: 30px
+			height: 30px
+		i
+			display: block
+			margin-bottom: 5px
+
+	.page_btn
+		&.prev
+			float: left
+			margin-right: 0
+		&.next
+			float: right
+			margin-left: 0
+
+/* min-height ========== */
+// @media screen and (max-height: 900px)

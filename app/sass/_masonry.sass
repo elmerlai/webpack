@@ -1,0 +1,175 @@
+/* masonry.css ==============================================*/
+
+.msnry_wrap
+	width: 100%
+	// padding-bottom: 80px
+	margin: 0 auto
+	.item_margin
+		width: 1%
+	.item_sz, .item
+		width: 13.4%
+	.item
+		// opacity: 0
+		position: relative
+		z-index: 1
+		float: left
+		margin: 0 0 20px 0
+		background: #fff
+		overflow: hidden
+		+box-shadow(0 1px 8px rgba(0,0,0,.4))
+		+border-radius(7px)
+		// +transition(opacity $sec ease)
+		// &.show
+		// 	+transform(scale(1))
+		&.trans
+			opacity: 1
+		&.msnry_tab
+			padding: 10px 10px 12px 10px
+			text-align: center
+			+border_box
+			li
+				&.on
+					span
+						display: block
+			a
+				position: relative
+				display: inline-block
+				margin: 5px 0
+				font-size: 18px
+				text-align: center
+				+transition($sec ease)
+				&:hover
+					color: $c_red
+				span
+					display: none
+					position: absolute
+					left: -20px
+					top: 8px
+					width: 10px
+					height: 10px
+					background: $c_red
+					+border-radius(50%)
+		.pic
+			display: block
+			width: 100%
+			overflow: hidden
+			&:hover
+				img
+					+transform(scale(1.1))
+			img
+				position: relative
+				z-index: 1
+				float: left
+				width: 100%
+				+transition($trans_sec_2 ease)
+		.text
+			display: block
+			float: left
+			width: 100%
+			padding: 10px 10px 12px 10px
+			line-height: 1.5em
+			+border_box
+			h2
+				margin-bottom: 15px
+				font-size: 16px
+			h3
+				margin-bottom: 10px
+				font-weight: normal
+
+		.author
+			position: relative
+			float: left
+			width: 100%
+			padding-left: 70px
+			+border_box
+			.photo
+				position: absolute
+				left: 0
+				top: 0
+				width: 50px
+				height: 50px
+				overflow: hidden
+				+border-radius(50%)
+				img
+					width: 100%
+			.word
+				width: 100%
+				letter-spacing: 0
+				line-height: 1.5em
+				font-size: 12px
+				color: $c_gray_2
+				h3
+					font-size: 15px
+					margin: -4px 0 3px 0
+					font-weight: normal
+				i,p 
+					line-height: 1.4em
+					font-style: normal
+
+.msnry_more
+	opacity: 0
+	display: inline-block
+	position: absolute
+	left: 50%
+	bottom: -100px
+	z-index: 10
+	width: 350px
+	padding: 8px 0
+	margin-left: -175px
+	text-align: center
+	background: $c_red
+	color: #fff
+	+border-radius(5px)
+	+transition($sec_2 ease)
+	&:hover
+		color: #fff
+		background: $c_purple
+	&.trans
+		opacity: 1
+		bottom: 40px
+	// span
+	// 	display: inline-block
+	// 	padding-right: 10px
+	// 	margin-right: 5px
+	// 	line-height: 1em
+	// 	border-right: 1px solid #fff
+
+@media screen and (max-width: 1600px)
+	.msnry_wrap
+		.item_sz, .item
+			width: 15.8%
+@media screen and (max-width: 1350px)
+	.msnry_wrap
+		.item_margin
+			width: 1.5%
+		.item_sz, .item
+			width: 18.8%
+@media screen and (max-width: 1150px)
+	.msnry_wrap
+		.item_margin
+			width: 2%
+		.item_sz, .item
+			width: 23.5%
+@media screen and (max-width: 1000px)
+	.msnry_wrap
+		.item_margin
+			width: 3.5%
+		.item_sz, .item
+			width: 31%
+@media screen and (max-width: 700px)
+	.msnry_wrap
+		.item_margin
+			width: 5%
+		.item_sz, .item
+			width: 47.5%
+@media screen and (max-width: 400px)
+	.msnry_wrap
+		.item_margin
+			width: 0
+		.item_sz, .item
+			width: 100%
+			// .pic
+			// 	float: left
+			// 	width: 30%
+			// .text
+			// 	width: 70%

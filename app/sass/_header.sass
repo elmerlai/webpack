@@ -1,0 +1,442 @@
+/* header.css ==============================================*/
+#menu
+	position: fixed
+	left: 0
+	top: 0
+	z-index: 10
+	width: 96%
+	padding: 20px 2%
+	text-align: center
+	+transition(padding $sec_2 ease, background $sec_2 ease)
+	&:before
+		content: ""
+		position: absolute
+		left: 0
+		top: 0
+		z-index: -1
+		width: 100%
+		height: 100px
+		+background(linear-gradient(to bottom, rgba(0,0,0,.5), rgba(0,0,0,0)))
+	&.trans
+		padding-top: 8px
+		padding-bottom: 8px
+		background: $c_purple
+		// background: rgba(0,0,0,.55)
+		&:before
+			display: none
+		>a
+			text-shadow: none
+			font-size: 18px
+			&.logo
+				top: 6px
+				width: 135px
+				height: 30px
+				background-image: url("../images/brand_logo_m.png")
+			&:before, &:after
+				display: none
+			&:hover
+				color: $c_orange
+			&.on
+				color: $c_orange
+				&:after
+					display: none
+		.menu_schedule
+			top: 8px
+			padding-left: 38px
+			img
+				width: 28px
+			&.on, &:hover		
+				a
+					color: $c_orange
+			&:after
+				display: none
+		.cart
+			border-radius: 0 0 5px 5px
+
+#menu
+	>a, .menu_schedule
+		position: relative
+		padding-bottom: 3px
+		font-size: 20px
+		font-weight: bold
+		color: #fff
+		+textShadow()
+		+btnTrans()
+	>a
+		display: inline-block
+		margin: 0 15px
+		&.logo
+			display: block
+			position: absolute
+			left: 2%
+			top: 10px
+			width: 104px
+			height: 71px
+			margin: 0	
+			padding: 0
+			+bg_img(brand_logo,png,no-repeat center)
+			+background-size(auto 100%)
+			+btnTrans
+			&:before, &:after
+				display: none
+			&:hover
+				margin-left: -5px
+		&:before, &:after
+			content: ''
+			display: block
+			position: absolute
+			z-index: -1
+			width: 0
+			height: 1px
+			background: #fff
+			+btnTrans()
+		&:before
+			left: -10px
+			top: -4px
+		&:after
+			right: -10px
+			bottom: -5px
+		&:hover
+			&:before, &:after
+				width: 90%
+		&.on
+			&:before
+				display: none
+			&:after
+				left: 0
+				bottom: -7px
+				width: 100%
+				height: 3px
+				background: #fff
+
+	.menu_schedule
+		position: absolute
+		right: 2%
+		top: 20px
+		padding-left: 40px
+		&:before
+			display: none
+		&:after
+			content: ''
+			display: block
+			position: absolute
+			right: -10px
+			bottom: -7px
+			z-index: -1
+			width: 0
+			height: 1px
+			background: #fff
+			+btnTrans()
+		&:hover
+			&:after
+				left: 0
+				width: 100%
+		&.added
+			padding-left: 35px
+			// margin-right: 35px
+			&:after
+				display: none
+			&:hover
+				padding-bottom: 15px
+				.cart
+					// display: block
+					visibility: visible
+					right: -15px
+					z-index: 1
+					.clear
+						color: #fff
+			.count
+				display: block
+			img
+				display: none
+		img
+			position: absolute
+			left: 0
+			top: 0
+			width: 30px
+		a
+			color: #fff
+		.count
+			display: none
+			position: absolute
+			left: 0
+			top: 3px
+			width: 24px
+			height: 24px
+			line-height: 22px
+			font-style: normal
+			font-size: 16px
+			background: $c_red
+			border-radius: 50%
+			text-shadow: none
+	.cart
+		visibility: hidden
+		position: absolute
+		right: -400px
+		top: 38px
+		z-index: -1
+		width: 300px
+		padding: 10px
+		background: $c_brown
+		border-radius: 5px
+		+transition($sec ease)
+		// +boxShadow
+		.item
+			position: relative
+			float: left
+			width: 100%
+			padding-bottom: 10px
+			margin-bottom: 10px
+			border-bottom: 1px dotted #fff
+			// &:last-child
+			// 	margin-bottom: 0
+			// 	padding-bottom: 0
+			// 	border: none
+			a
+				+btnTrans
+			.pic
+				float: left
+				width: 18%
+				background-color: #000
+				overflow: hidden
+				a
+					display: block
+					width: 100%
+					height: 0
+					padding-bottom: 100%
+					background-position: center
+					background-repeat: no-repeat
+					+background-size(cover)
+					&:hover
+						opacity: .7
+			.text
+				position: relative
+				float: right
+				width: 77%
+				padding-right: 35px
+				color: #fff
+				text-align: left
+				text-shadow: none
+				+border_box
+				p
+					line-height: 1.2em
+					margin-bottom: 3px
+					font-size: 15px
+				h3
+					font-size: 18px
+				a
+					color: #fff
+					&:hover
+						color: $c_red
+			.del
+				position: absolute
+				right: 5px
+				top: 50%
+				width: 20px
+				height: 20px
+				margin-top: -1px
+				+transform(translateY(-50%))
+				i
+					width: 100%
+					height: 100%
+					+transform-origin(50% 50%)
+					&:before, &:after
+						top: 9px
+						height: 3px
+						background: #fff
+		.clear
+			font-size: 16px
+
+.m_logo
+	display: none
+	position: fixed
+	left: 3%
+	top: 8px
+	z-index: 2
+	width: 157px
+	height: 35px
+	background-image: url("../images/brand_logo_m.png")
+	+background-size(auto 100%)
+	+btnTrans
+	&.hide
+		opacity: 0
+#menu_m
+	display: none
+	position: fixed
+	right: 3%
+	top: 15px
+	z-index: 15
+	width: 30px
+	height: 23px
+	div
+		position: absolute
+		left: 0
+		width: 100%
+		height: 5px
+		background: $c_red
+		&.line1
+			top: 0
+			@extend %menu_trans_delay
+		&.line2, &.line3
+			top: 9px
+			@extend %menu_trans
+		&.line4
+			top: 18px
+			@extend %menu_trans_delay
+
+	&.on .line1, &.on .line4
+		top: 9px
+		opacity: 0
+		+transition(transform .5s 0 ease, top .5s 0 ease, opacity .1s .4s ease)
+	&.on .line2
+		+transform(rotate(45deg))
+		@extend %menu_trans_delay
+	&.on .line3
+		+transform(rotate(-45deg))
+		@extend %menu_trans_delay
+
+%menu_trans
+	+transition(all .5s 0 ease)
+%menu_trans_delay
+	+transition(transform .5s .4s ease, top .5s .4s ease, opacity .1s .4s ease)
+
+
+@media screen and (max-width: 1140px)
+	#menu
+		>a
+			margin-left: 5px
+			font-size: 16px
+			&.logo
+				top: 10px
+				width: 80px
+				height: 55px
+			&:first-child
+				margin-left: 0
+		.menu_schedule
+			font-size: 16px
+
+@media screen and (max-width: 950px)
+	#menu
+		opacity: 0
+		z-index: 0
+		width: 70%
+		height: 100vh
+		padding: 0
+		background: $c_brown_2
+		overflow-x: hidden	
+		overflow-y: auto
+		&:before
+			display: none
+
+		&.open
+			opacity: 1
+		&.close
+			+transition(opacity .1s ease $sec_2)
+			opacity: 0
+		&.trans
+			padding: 0
+			>a
+				font-size: 16px
+				&.logo
+					top: 0
+					img
+						width: auto
+						height: 40px
+						margin-bottom: 20px
+				&.on, &:hover
+					color: #fff
+			.menu_schedule
+				top: 0
+				padding-left: 0
+
+		>a, .menu_schedule
+			padding: 15px 0
+			text-align: center
+			border-bottom: 1px solid rgba(255,255,255,.25)
+			text-shadow: none
+			&.on
+				background-color: rgba(255,255,255,.2)
+			&:hover
+				background-color: rgba(255,255,255,.1)
+			&:before, &:after
+				display: none
+		>a
+			width: 100%
+			margin: 0
+			&.logo
+				position: relative
+				top: 0
+			&.logo
+				left: 0
+				width: 100%
+				height: 100px
+				+background-size(auto 70%)
+				&:hover
+					margin-left: 0
+		.menu_schedule
+			position: relative
+			right: 0	
+			top: 0
+			padding: 15px 0
+			text-shadow: none
+			img
+				display: none
+				// position: relative
+				// width: 28px	
+				// margin: 0 5px -8px -10px
+			&.added
+				padding-left: 0
+				.count
+					display: inline-block
+					position: relative
+					top: 0
+					margin-right: 10px
+				a
+					display: inline-block
+				.cart
+					display: none
+
+	.m_logo, #menu_m
+		display: block
+	
+
+
+@media screen and (max-height: 600px)
+	#menu
+		a
+			padding: 10px	0
+@media screen and (max-height: 500px)
+	#menu
+		a
+			padding: 5px	0
+
+
+// +keyframes(hvr-ripple-out)
+// 	100%
+// 		top: -7px
+// 		right: -10px
+// 		bottom: -7px
+// 		left: -10px
+// 		opacity: 0
+
+// #menu
+// 	a
+// 		box-shadow: 0 0 1px rgba(0, 0, 0, 0)
+// 		-moz-osx-font-smoothing: grayscale
+// 		+transform(translateZ(0))
+// 		+backface-visibility(hidden)
+// 		&:before
+// 			display: none
+// 			content: ''
+// 			position: absolute
+// 			top: -3px
+// 			right: -6px
+// 			bottom: -3px
+// 			left: -6px
+// 			border: 4px solid #fff
+// 			// background: rgba(255,255,255,.9)
+// 		&:hover, &:focus, &:active
+// 			&:before
+// 				display: block
+// 				border-radius: 5px
+// 				+animation(hvr-ripple-out 1s forwards)

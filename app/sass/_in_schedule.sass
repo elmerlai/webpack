@@ -1,0 +1,1455 @@
+/* in_schedule.css ==============================================*/
+.schedule_wrap
+	width: 100%
+	h1
+		margin-bottom: 80px
+		line-height: 1.2em
+		font-size: 45px
+		+textShadow
+	h2
+		margin-bottom: 50px
+		font-size: 26px
+		text-align: center
+	.group
+		position: relative
+		float: left
+		width: 100%
+		padding: 50px 3%
+		background-color: $c_cream
+		+border_box
+		&.bg
+			position: fixed
+			left: 0
+			top: 0
+			height: 100vh
+			+bg_img(schedule_bg, png, no-repeat center)
+			+background-size(cover)
+		&:nth-child(odd)
+			background-color: #fff
+		&.main	
+			min-height: 100vh
+			color: #fff
+			background: none
+			.info
+				position: absolute
+				left: 50%
+				bottom: 15%
+				+transform(translate(-50%,0))
+			h2
+				+textShadow
+			.text
+				// top: auto
+				// bottom: 15%
+				// +transform(translate(-50%,0))
+				span
+					+textShadow
+		.info
+			position: relative
+			width: 94%
+			max-width: 1140px
+			margin: 0 auto
+			text-align: center
+			// +transform(translate(-50%,-50%))
+			.form
+				width: 100%
+				max-width: 600px
+				padding-right: 25px
+				margin: 0 auto
+				.left, .right
+					float: left
+					width: 48%
+				.right
+					float: right
+				.bottom
+					float: left
+					clear: both
+					width: 100%
+					.row
+						float: left
+						width: 30%
+						margin-right: 5%
+						&:last-child
+							margin-right: 0
+						span
+							padding: 7px 8px
+				.row
+					position: relative
+					float: left
+					width: 100%
+					margin-bottom: 30px
+					padding-left: 65px
+					font-size: 20px
+					text-align: left
+					+border_box
+					// &.disable
+					// 	p
+					// 		background: rgba(255,255,255,.8)
+					// 		color: $c_gray_2
+					span, p, select, input
+						+border_box
+					span, p, input
+						padding: 8px
+					p, select, input
+						width: 100%
+						text-align: left
+						background: rgba(255,255,255,.9)
+						border-radius: 8px
+						color: #333
+					select, input
+						outline: none
+						cursor: pointer
+						border: none
+					i
+						display: block
+						position: absolute
+						right: 12px
+						top: 0
+						width: 17px
+						height: 100%
+						+bg_img(icon_map,png,no-repeat center)
+						+background-size(100% auto)
+					span
+						position: absolute
+						left: 0
+						top: 0
+						// text-align: right
+					select
+						padding: 7px 8px
+						text-align-last: center
+						option
+							text-align-last: center
+
+.schedule_wrap
+	.group
+		&.main
+			.btn_wrap
+				.step_next
+					background: $c_red
+		// &:last-child
+		// 	.btn_wrap
+		// 		display: none
+
+		.btn_wrap
+			clear: both
+			width: 100%
+			padding-top: 40px
+			text-align: center
+			a
+				display: inline-block
+				width: 180px
+				padding: 10px 0
+				background: $c_orange_2
+				font-size: 20px
+				color: #fff
+				border-radius: 10px
+				cursor: pointer
+				+btnTrans
+				&.send
+					width: 250px
+					padding: 15px 0
+					background: #000
+				&:hover
+					background: $c_red
+					&.send
+						background: $c_brown
+
+				
+.schedule_wrap
+	.slider
+		position: relative
+		width: 100%
+		margin: 0 auto
+		background: #fff
+		border-top: 1px solid #fff
+		border-left: 1px solid #fff
+		// +transform(translateX(0.5%))
+		+border_box
+		.item
+			position: relative
+			float: left
+			width: 33%
+			height: 0
+			padding-bottom: 33%
+			border-right: 1px solid #fff
+			border-bottom: 1px solid #fff
+			overflow: hidden
+			// +boxShadow
+			+border_box
+			&:nth-child(3n)
+				width: 34%
+			.pic
+				width: 100%
+				height: 0
+				padding-bottom: 100%
+				background-position: center
+				background-repeat: no-repeat
+				+background-size(cover)
+				&:before, &:after
+					cursor: pointer
+				&:before
+					content: ""
+					position: absolute
+					left: 0
+					top: 0
+					z-index: 0
+					width: 100%
+					height: 100%
+					background: rgba(0,0,0,.5)
+					opacity: 0	
+					+btnTrans
+					+transform(scale(0))
+				&:after
+					content: ""
+					display: none
+					position: absolute
+					left: 0
+					top: 0
+					z-index: 1
+					width: 100%
+					height: 100%
+					+btnTrans
+					+bg_mix(rgba(0,0,0,.5),icon_added,png,no-repeat center)
+			.text
+				position: absolute
+				left: 0
+				bottom: 0
+				z-index: 2
+				width: 100%
+				padding: 30px
+				color: #fff
+				text-align: left
+				+border_box
+				line-height: 1.3em
+				+background(linear-gradient(to top, rgba(0,0,0,.5), rgba(0,0,0,0)))
+				p
+					margin-bottom: 10px
+					font-size: 20px
+				h3
+					font-size: 24px
+				a
+					color: #fff
+					&:hover
+						color: $c_red
+			.btn
+				opacity: 0
+				position: absolute
+				left: 0
+				top: 50%
+				z-index: 2
+				width: 100%
+				text-align: center
+				+transform(translateY(-50%))
+				+btnTrans
+				a
+					display: inline-block
+					margin: 0 10px
+					width: 40px
+					height: 40px
+					cursor: pointer
+					+bg_img(schedule_btn,png,no-repeat)
+					+background-size(auto 100%)
+					+btnTrans
+					&.add
+						background-position: 0 0
+					&.remove
+						display: none
+						background-position: 100% 0
+					&:hover
+						+transform(scale(1.15))
+.schedule_wrap
+	.slider
+		&.traffic
+			.item
+				width: 31%
+				height: auto
+				padding-bottom: 0
+				margin-right: 3.5%
+				&:nth-child(3n)
+					margin-right: 0
+				.pic
+					position: relative
+					width: 100%
+					padding-bottom: 100%
+					margin-bottom: 20px
+				.text
+					position: relative
+					left: 0
+					bottom: 0
+					padding: 0
+					background: none
+					color: #333
+					p
+						line-height: 1.3em
+						font-size: 20px
+						span
+							margin-right: 20px
+							font-size: 15px
+							color: #999
+					a
+						color: #333
+
+
+.schedule_wrap
+	.slider
+		.item
+			&.on
+				.pic
+					&:before
+						background: rgba(0,0,0,.7)
+					&:after
+						display: block
+				.btn
+					a
+						&.add
+							display: none
+						&.remove
+							display: inline-block
+			&:hover
+				.pic
+					&:before
+						opacity: 1
+						+transform(scale(1))
+					&:after
+						opacity: 0
+				.btn
+					opacity: 1
+
+.schedule_wrap
+	.slider_btn
+		border-radius: 50%
+		background-color: $c_orange
+		&.prev
+			left: 0
+			+transform(translateX(-50%))
+		&.next
+			right: 0
+			+transform(translateX(50%))
+		&:hover
+			padding: 0
+			background-color: $c_red
+			&.prev
+				margin-left: -10px
+			&.next
+				margin-right: -10px
+	.group
+		&:nth-child(odd)
+			.slider_btn
+				background-color: $c_brown
+				&:hover
+					background-color: $c_red
+		&.traffic
+			.slider_btn
+				top: 0
+				margin-top: 15.5%
+				&.prev
+					+transform(translate(-50%, -50%))
+				&.next
+					+transform(translate(50%, -50%))
+
+.schedule_wrap
+	.result
+		clear: both
+		width: 94%
+		max-width: 800px
+		height: 0
+		margin: 0 auto
+		opacity: 0
+		+btnTrans
+		&.trans
+			height: auto
+			margin-top: 40px
+			opacity: 1
+		.item
+			float: left
+			width: 100%
+			padding-bottom: 20px
+			margin-bottom: 20px
+			margin-top: 0
+			border-bottom: 1px dotted #bbb
+			font-size: 20px
+			+btnTrans
+			&.hide
+				margin-top: -30px
+				opacity: 0
+			p
+				float: left
+			.fn
+				float: right
+			select
+				width: 80px
+				margin-right: 20px
+				text-align-last: center
+				// background: $c_red
+				border-radius: 8px
+				outline: none
+			a
+				position: relative
+				margin-left: 30px
+				padding-left: 35px
+				font-size: 20px
+				cursor: pointer
+				+btnTrans
+				i
+					position: absolute
+					left: 0
+					top: 0
+				
+
+	.traffic
+		.result
+			padding-top: 30px
+			border-top: 1px dotted #bbb 
+
+.schedule_wrap
+	.result
+		&.tag
+			max-width: 1140px
+			padding-bottom: 20px
+			border-bottom: 1px dotted #999
+			text-align: center
+			h2
+				margin-bottom: 30px
+			.item
+				display: inline-block
+				float: none
+				width: auto
+				padding: 5px 15px
+				margin: 0 10px 10px 10px
+				background: $c_red
+				color: #fff
+				border-radius: 7px
+				border: none
+				+transform(scale(1))
+				&.hide
+					margin-top: 0
+					opacity: 0
+					+transform(scale(0))
+				a
+					float: right
+					width: 20px
+					height: 26px
+					margin-left: 20px
+					padding-left: 0
+					text-indent: -100px
+					overflow: hidden
+					i
+						position: relative
+						width: 100%
+						height: 100%
+						&:before, &:after
+							height: 3px
+							background: #fff
+
+.schedule_detail
+	clear: both
+	width: 100%
+	min-height: 100vh
+	+bg_img(article_bg,png,no-repeat 0 0)
+	background-attachment: fixed
+	+background-size(cover)
+	.info
+		width: 100%
+		margin-bottom: 60px
+		border-radius: 10px
+		overflow: hidden
+		box-shadow: 0 2px 8px rgba(0,0,0,.5)
+		h1
+			width: 100%
+			padding: 20px 0
+			text-align: center
+			line-height: 40px
+			color: #fff
+			font-weight: normal
+			+background(linear-gradient(to bottom, #F96D6A, #FFBC7A))
+			i, span
+				display: inline-block
+			i
+				width: 40px
+				height: 40px
+				margin: 0 15px -8px 0
+				+bg_img(icon_schedule_title,png,no-repeat 0 0)
+				+background-size(100% auto)
+		.text_wrap
+			padding: 60px
+			background: rgba(255,255,255,.85)
+			+border_box
+			h2
+				text-align: center
+				margin-bottom: 50px
+				line-height: 1.3em
+				font-size: 30px
+			.group
+				position: relative
+				width: 100%
+				.line
+					position: absolute
+					left: 49px
+					bottom: 0
+					width: 2px
+					height: 95%
+					background: $c_brown
+				.item
+					position: relative
+					width: 100%
+					padding-left: 180px
+					+border_box
+					&:first-child
+						.text
+							padding-top: 20px
+					&:last-child
+						.text
+							padding-bottom: 40px
+							border: none
+					&:before
+						content: ""
+						display: block
+						position: absolute
+						left: 0
+						top: 10px
+						width: 100px
+						height: 100px
+						border-radius: 50%
+						box-shadow: 0 0 10px rgba(0,0,0,.5)
+						background-color: #fff
+						background-position: center 15%
+						+background-size(auto 50%)
+						background-repeat: no-repeat
+						// +transform(rotate(-15deg))
+					&:after
+						display: block
+						position: absolute
+						left: 50px
+						top: 75px
+						text-align: center
+						font-size: 16px
+						// background-color: rgba(255,255,255,.8)
+						// border-radius: 10px
+						+transform(translateX(-50%))
+					// &:before
+					// 	opacity: .3
+					// 	z-index: 1
+					// &:after
+					// 	z-index: 0
+					// 	background-color: #fff
+					// 	background-repeat: no-repeat
+					// 	box-shadow: 0 0 10px rgba(0,0,0,.5)
+					&.date
+						&:before
+							background-image: url("../images/icon_schedule_1.png")
+						&:after
+							content: "日期"
+					&.hotel
+						&:before
+							background-image: url("../images/icon_schedule_2.png")
+						&:after
+							content: "住宿"
+					&.tour
+						&:before
+							background-image: url("../images/icon_schedule_3.png")
+						&:after
+							content: "景點"
+					&.restaurant
+						&:before
+							background-image: url("../images/icon_schedule_4.png")
+						&:after
+							content: "餐廳"
+					&.event
+						&:before
+							background-image: url("../images/icon_schedule_5.png")
+						&:after
+							content: "活動"
+					&.traffic
+						&:before
+							background-image: url("../images/icon_schedule_6.png")
+							+background-size(auto 40%)
+							background-position: center 20%
+						&:after
+							content: "交通"
+					&.tag
+						.text
+							p
+								float: left
+								margin: 8px 20px 8px 0
+								padding: 5px 15px
+								// border: 1px solid #ccc
+								border-radius: 5px
+								background: $c_red
+								color: #fff
+					.text
+						width: 100%
+						min-height: 120px
+						padding: 30px 0
+						border-bottom: 1px dotted #999
+						+border_box
+						h3
+							line-height: 1.5em
+							font-size: 26px
+							span
+								margin-right: 30px
+								&:last-child
+									margin-right: 0
+						p
+							margin-bottom: 5px
+							line-height: 1.5em
+							font-size: 20px
+							&:last-child
+								margin-bottom: 0
+							span
+								font-size: 26px
+								font-weight: bold
+								color: $c_red
+						ul
+							padding-left: 0
+							margin: 0
+							li
+								margin-bottom: 20px
+								&:last-child
+									margin-bottom: 0
+
+.schedule_detail
+	.info
+		.text_wrap
+			.total
+				position: relative
+				clear: both
+				width: 100%
+				padding: 50px 0
+				text-align: center
+				border: 1px solid #999
+				background: #fff
+				border-radius: 10px
+				+border_box
+				background: #fff
+				p
+					display: inline-block
+					font-size: 24px
+					&:first-child
+						position: absolute
+						left: 40px
+						top: 50%
+						+transform(translateY(-50%))
+					span
+						margin-left: 25px
+						font-size: 45px
+						color: $c_red
+
+.schedule_detail
+	.info
+		.text_wrap
+			.topic
+				margin-top: 40px
+				h2
+					margin-bottom: 40px
+				.item
+					position: relative
+					width: 100%
+					padding-left: 130px
+					padding-bottom: 30px
+					margin-bottom: 30px
+					border-bottom: 1px dotted #ccc
+					+border_box
+					&:last-child
+						margin-bottom: 0
+					.pic
+						position: absolute
+						left: 0
+						top: 0
+						z-index: 1
+						width: 100px
+						height: 100px
+						border-radius: 50%
+						overflow: hidden
+						&:hover
+							a
+								+transform(scale(1.2))
+						a
+							display: block
+							position: relative
+							z-index: 0
+							width: 100%
+							height: 100%
+							background-repeat: no-repeat
+							background-position: center
+							+background-size(cover)
+							+transition($sec_4 ease)
+					.text
+						width: 100%
+						a
+							+btnTrans
+							&:hover
+								color: $c_red
+						h3
+							line-height: 1.3em
+							margin-bottom: 10px
+							font-size: 20px
+						h4
+							line-height: 1.3em
+							margin-bottom: 15px
+							font-size: 16px
+							font-weight: normal
+							a
+								color: #999
+						p
+							font-size: 20px
+							span
+								margin-left: 15px
+								font-size: 26px
+								color: $c_red
+
+.schedule_detail
+	.info
+		.text_wrap
+			.form
+				width: 100%
+				margin: 40px auto 0 auto
+				// padding: 30px
+				border-radius: 10px
+				// background: $c_cream
+				+border_box
+				.text
+					width: 100%
+					max-width: 600px
+					margin: 0 auto
+					+border_box
+					input, textarea
+						width: 100%
+						border-radius: 5px
+						border: 1px	solid #999
+						outline: none
+						+border_box
+					input	
+						padding: 10px	
+					textarea
+						height: 100px
+						padding: 5px 10px
+					span
+						padding-top: 10px
+						padding-bottom: 10px
+						font-size: 18px
+					p
+						position: relative
+						width: 100%
+						margin-bottom: 20px
+						padding-left: 120px
+						+border_box
+						span
+							position: absolute
+							left: 0
+							top: 0
+						input
+							width: 100%
+					div
+						width: 100%
+						margin-top: 30px
+						padding-top: 30px
+						border-top: 1px dotted #999
+						span
+							display: block
+							margin-bottom: 5px
+							padding-top: 0
+
+.schedule_detail
+	.info
+		.text_wrap
+			.btn_wrap	
+				width: 100%
+				margin-top: 30px
+				text-align: center
+				a
+					display: inline-block
+					position: relative
+					width: 200px
+					padding: 10px 0
+					color: #fff
+					font-size: 20px
+					border-radius: 10px
+					cursor: pointer
+					+btnTrans
+					&.back
+						margin-right: 20px
+						background: #999
+					&.send
+						margin-bottom: 30px
+						background: $c_orange
+						&:after
+							content: "將有專人為您服務"
+							position: absolute
+							left: 0
+							bottom: -33px
+							width: 100%
+							color: #666
+							font-size: 16px
+					&:hover
+						background: $c_red
+
+
+
+@media screen and (max-width: 1050px)
+	.schedule_wrap
+		h1
+			margin-bottom: 50px
+			font-size: 36px
+		h2
+			margin-bottom: 30px
+			font-size: 22px
+		.group
+			padding-top: 30px
+			padding-bottom: 30px
+			.info
+				.form
+					padding-left: 0
+					.bottom
+						.row
+							margin-bottom: 10px
+							span
+								padding-top: 4px
+								padding-bottom: 4px
+					.row
+						padding-left: 55px
+						margin-bottom: 15px
+						font-size: 16px
+						i
+							display: none
+						span, input
+							padding-top: 5px
+							padding-bottom: 5px
+						span
+							line-height: 1.3em
+						p
+							padding-top: 2px
+							padding-bottom: 2px
+						select
+							padding-top: 4px
+							padding-bottom: 4px
+			.btn_wrap
+				padding-top: 30px
+				a
+					padding-top: 5px
+					padding-bottom: 5px 
+					font-size: 16px
+	
+	.schedule_wrap
+		.slider
+			.item
+				.pic
+					&:after
+						+background-size(80px auto)
+					&:before
+						display: none
+				.text
+					padding: 20px
+				.btn
+					opacity: 1
+					top: 15px
+					text-align: right
+					+transform(translateY(0))
+					a
+						width: 35px
+						height: 35px
+						margin: 0 15px 0 0
+				&.on
+					.pic
+						&:after
+							display: block !important
+
+			&.traffic
+				.item
+					.text
+						p
+							line-height: 1.5em
+							font-size: 17px
+
+@media screen and (max-width: 950px)
+	.schedule_detail
+		.info
+			.text_wrap
+				padding: 40px
+				h2
+					margin-bottom: 40px
+					font-size: 24px
+				.group
+					.line
+						left: 39px
+					.item
+						padding-left: 120px
+						&:before
+							width: 80px
+							height: 80px
+						&:after
+							left: 40px
+							top: 55px
+						// &:before
+						.text
+							min-height: 0
+							padding: 20px 0
+							h3
+								margin-bottom: 2px
+								font-size: 22px
+							p
+								font-size: 18px
+								span
+									font-size: 22px
+						&:first-child
+							.text
+								padding-top: 15px
+						&:last-child
+							.text
+								padding-bottom: 20px
+						&.tag
+							.text
+								p
+									margin-top: 0
+				.total
+					padding: 25px 0 20px 0
+					p
+						display: block
+						span
+							margin-left: 15px
+							font-size: 36px
+						&:first-child
+							position: relative
+							left: auto
+							top: auto
+							margin-bottom: 5px
+							font-size: 20px
+
+				.topic
+					margin-top: 30px
+					h2
+						margin-bottom: 30px
+					.item
+						padding-bottom: 20px
+						margin-bottom: 20px
+						.text
+							h3
+								margin-bottom: 5px
+							h4
+								margin-bottom: 10px
+				.form
+					margin-top: 30px
+					.text
+						div
+							padding-top: 20px
+
+@media screen and (max-width: 900px)
+	.schedule_wrap
+		.slider
+			.item
+				.pic
+					&:after
+						background-position: center 20%
+						+background-size(60px auto)
+				.text
+					padding: 20px
+					p
+						margin-bottom: 5px
+						font-size: 16px
+					h3
+						font-size: 20px
+				// .btn
+				// 	top: 19%
+				// 	+transform(translateY(0))
+			&.traffic
+				.item
+					.pic
+						&:after
+							background-position: center
+					.text
+						p
+							font-size: 15px
+					.btn
+						top: 50%
+						+transform(translateY(-50%))
+
+		.slider_btn
+			width: 40px
+			height: 40px
+			margin-top: -20px
+	
+@media screen and (max-width: 800px)
+	.schedule_wrap
+		.slider
+			&.traffic
+				.item
+					width: 100%
+					height: auto
+					padding-bottom: 0
+					margin-right: 0
+					border-top: 1px dotted #ddd
+					&:nth-child(3n)
+						width: 100%
+						padding-bottom: 0
+					.pic
+						float: left
+						width: 25%
+						padding-bottom: 25%
+						margin-bottom: 0
+					.text
+						float: right
+						width: 70%
+						padding: 20px 0
+						p
+							font-size: 18px
+							span
+								font-size: 18px
+		.group
+			&.traffic
+				.slider_btn
+					position: absolute
+					top: -56px
+					width: 30px
+					height: 30px
+					margin-top: 0
+					&.prev, &.next
+						+transform(translate(0,0))
+					&.prev
+						left: 0
+					&.next
+						right: 0
+
+@media screen and (max-width: 700px)
+	.schedule_wrap
+		h1
+			margin-bottom: 20px
+			font-size: 30px
+
+		.slider
+			&.traffic
+				.item
+					.text
+						padding: 15px 0
+						p
+							line-height: 1.3em
+							font-size: 16px
+							span
+								font-size: 13px
+
+@media screen and (max-width: 650px)
+	.schedule_wrap
+		.slider
+			.item
+				width: 50%
+				padding-bottom: 50%
+				&:nth-child(3n)
+					width: 50%
+					padding-bottom: 50%
+
+		.slider_btn
+			position: absolute
+			top: -56px
+			width: 30px
+			height: 30px
+			margin-top: 0
+			+transform(translateX(0))
+			&.prev
+				left: 3%
+			&.next
+				right: 3%
+
+		.result
+			.item
+				padding-bottom: 15px
+				margin-bottom: 15px
+				font-size: 15px
+				p
+					max-width: 50%
+				select
+					width: 60px
+					margin-right: 10px
+				a
+					position: relative
+					margin-left: 20px
+					padding-left: 25px
+					font-size: 15px
+					cursor: pointer
+					+btnTrans
+					i
+						width: 21px
+						height: 21px
+						&:before, &:after
+							top: 8px
+							height: 3px
+			&.tag
+				padding-bottom: 0
+				h2
+					margin-bottom: 20px
+				.item
+					padding: 3px 10px
+					padding-right: 35px
+					+border_box
+					p
+						max-width: 100%
+						margin-bottom: 0
+					a
+						position: absolute
+						right: 8px
+						top: 7px
+						width: 17px
+						height: 17px
+						i
+							width: 17px
+							height: 17px
+							&:before, &:after
+								top: 7px
+	.schedule_wrap 
+		.traffic 
+			.result
+				padding-top: 15px
+
+	
+
+@media screen and (max-width: 600px)
+	.schedule_wrap
+		h1
+			margin-bottom: 10px
+			font-size: 24px
+		h2
+			font-size: 20px
+		.group
+			.info
+				.form
+					.left, .right
+						float: left
+						width: 90%
+					.bottom
+						width: 90%
+
+	.schedule_detail
+		.info
+			.text_wrap
+				padding: 30px
+				h2
+					margin-bottom: 25px
+				.group
+					.line
+						left: 29px
+					.item
+						padding-left: 100px
+						&:before
+							width: 60px
+							height: 60px
+						&:after
+							left: 30px
+							top: 40px
+							font-size: 14px
+						.text
+							padding: 10px 0
+							min-height: none
+							h3
+								margin-bottom: 2px
+								font-size: 20px
+							p
+								font-size: 16px
+								span
+									font-size: 20px
+							ul
+								li
+									margin-bottom: 10px
+						&:first-child
+							.text
+								padding-top: 5px
+						&.tag
+							.text
+								p
+									padding: 3px 10px
+				.topic
+					.item
+						padding-left: 110px
+						.pic
+							width: 80px
+							height: 80px
+						.text
+							h3
+								margin-bottom: 5px
+							h4
+								margin-bottom: 10px
+				.btn_wrap	
+					margin-top: 20px
+					a
+						float: left
+						width: 48%
+						&.back
+							margin-right: 4%
+
+@media screen and (max-width: 500px)
+	.schedule_wrap
+		h1
+			font-size: 20px
+		.slider
+			margin-top: 60px
+			&.traffic
+				.item
+					.pic
+						&:after
+							+background-size(40px auto)
+					.text
+						padding: 10px 0
+						p
+							font-size: 15px
+
+		.result
+			.item
+				padding-bottom: 15px
+				margin-bottom: 10px
+				font-size: 15px
+				text-align: center
+				p
+					width: 100%
+					max-width: 100%
+					margin-bottom: 7px
+					font-size: 17px
+				.fn
+					float: left
+					clear: left
+					width: 100%
+				select, span, a
+					display: inline-block
+				select
+					width: 20%
+				a
+					margin-left: 30px
+					i
+						top: 3px
+			&.tag
+				.item
+					a
+						i
+							&:before, &:after
+								top: 5px
+
+		.slider_btn
+			top: -45px !important
+			margin: 0 !important
+			&.prev
+				left: 50% !important
+				+transform(translateX(-120%) !important ) 
+			&.next
+				right: 50% !important
+				+transform(translateX(120%) !important )
+
+	.schedule_detail
+		.info
+			.text_wrap
+				h2
+					font-size: 22px
+				.group
+					.item
+						.text
+							h3
+								margin-bottom: 2px
+								font-size: 18px
+							p
+								font-size: 15px
+								span
+									font-size: 18px
+						&:first-child
+							.text
+								padding-top: 10px
+				.total
+					padding: 20px 0 15px 0
+					p
+						display: block
+						font-size: 18px
+						span
+							font-size: 30px
+						&:first-child
+							margin-bottom: 0
+							font-size: 18px
+
+				.topic
+					.item
+						padding-bottom: 10px
+						margin-bottom: 10px
+						.text
+							h4
+								font-size: 15px
+							p
+								font-size: 15px
+								span
+									font-size: 22px
+				.form
+					.text
+						p
+							margin-bottom: 10px
+							padding-left: 100px
+							span, input
+								padding-top: 5px
+								padding-bottom: 5px
+							span
+								font-size: 16px
+						div
+							span
+								font-size: 16px
+
+
+	.schedule_detail
+		.info
+			.text_wrap
+				.form	
+					.text
+						p
+							padding-left: 80px
+							span
+								font-size: 15px
+						div
+							padding-top: 10px
+							margin-top: 10px
+
+				.btn_wrap	
+					margin-top: 15px
+					a
+						padding: 5px 0
+						font-size: 15px
+						&.send
+							margin-bottom: 20px
+							&:after
+								bottom: -30px
+								font-size: 14px
+
+@media screen and (max-width: 400px)
+	.schedule_wrap
+		.group
+			padding-top: 20px
+			padding-bottom: 30px
+			.info
+				.form
+					.bottom
+						width: 100%
+						.row
+							width: 90%
+							margin-bottom: 15px
+		.slider
+			.item
+				width: 100% !important
+				padding-bottom: 100% !important
+				.pic
+					&:after
+						background-position: center !important
+						+background-size(auto !important)
+				.btn
+					top: 50% !important
+					text-align: center
+					+transform(translateY(-50%))
+					a
+						margin: 0
+				&.on
+					.pic
+						&:after
+							display: block
+							opacity: 1 !important
+							background-image: none 
+			&.traffic
+				.item
+					margin-bottom: 15px
+					padding-bottom: 0 !important
+					.pic
+						width: 100%
+						padding-bottom: 100%
+						margin-bottom: 10px
+					.text
+						width: 100%
+
+
+	.schedule_detail
+		.info
+			.text_wrap
+				padding: 25px
+				h2
+					margin-bottom: 20px
+				.group
+					.line
+						display: none
+					.item
+						padding-left: 0
+						padding-top: 30px
+						&:before
+							display: none
+						&:after
+							display: block
+							left: 50%
+							top: 5px
+							width: 100%
+							text-align: center
+							font-size: 18px
+							font-weight: bold
+							color: $c_brown
+						&:first-child
+							padding-top: 0
+							&:after
+								display: none
+						&.tag
+							.text
+								text-align: center
+								p
+									display: inline-block
+									float: none
+				.topic
+					.item
+						padding-left: 0
+						.pic
+							position: relative
+							width: 100%
+							height: 0
+							padding-bottom: 100%
+							margin-bottom: 10px
+							border-radius: 0
+							a
+								position: absolute
+								left: 0
+								top: 0
+						.text
+							h4
+								color: #666
+				.form	
+					margin-top: 20px
+					.text
+						div
+							padding-top: 15px
+							margin-top: 20px
+
+@media screen and (max-width: 350px)
+	.schedule_detail
+		.info
+			.text_wrap
+				.btn_wrap	
+					a
+						float: left
+						width: 100%
+						margin-bottom: 10px
+
+
+@media screen and (max-height: 750px)
+	@media screen and (min-width: 1051px)
+		.schedule_wrap
+			h1
+				margin-bottom: 50px
+				font-size: 36px
+			h2
+				margin-bottom: 30px
+				font-size: 22px
+
+@media screen and (max-height: 650px)
+	@media screen and (min-width: 1051px)
+		.schedule_wrap
+			h1
+				margin-bottom: 30px
+				font-size: 30px
+
+@media screen and (max-height: 600px)
+	.schedule_wrap
+		.group
+			&.main
+				.info
+					position: relative
+					left: 0
+					bottom: 0
+					margin: 0 auto
+					margin-top: 70px
+					+transform(translate(0,0))
+	@media screen and (max-width: 950px)
+		.schedule_wrap
+			.group
+				&.main
+					.info
+						margin-top: 10px
+

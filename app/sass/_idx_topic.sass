@@ -1,0 +1,292 @@
+/* idx_topic.css ==============================================*/
+#topic
+	position: relative
+	float: left
+	clear: both
+	width: 100%
+	height: 80vh
+	.load_target
+		width: 100%
+		height: 100%
+		background: #ddd
+		overflow: hidden
+
+	//topic item
+	.item
+		position: relative
+		float: left
+		width: 33%
+		height: 100%
+		overflow: hidden
+		background: $c_red
+		&:nth-child(2)
+			width: 34%
+		.pic
+			position: relative
+			z-index: 0
+			width: 100%
+			height: 100%
+			text-align: center
+			overflow: hidden
+			+transition($sec_3 ease)
+			&:before, &:after, .img
+				width: 100%
+				+transform(translateX(-100%))
+				+transition-timing-function($easeing)
+			&:before
+				content: ''
+				display: block
+				position: absolute
+				left: 0
+				bottom: 0
+				z-index: 2
+				width: 100%
+				height: 70%
+				+transform(translateX(-100%))
+				+background(linear-gradient(to top, rgba(0,0,0,.75), rgba(0,0,0,0)))
+			&:after
+				content: ''
+				display: block
+				position: absolute
+				left: 0
+				top: 0
+				z-index: 0
+				height: 100%
+				background: $c_brown
+				+transition-duration($sec_2)
+			&.trans
+				+transform(scale(1.2))
+			.img
+				position: relative
+				z-index: 1
+				width: 100%
+				height: 100%
+				margin: 0 auto
+				background-position: center
+				+background-size(cover)
+				+transition-duration($sec_3)
+				+transition-delay($sec_2)
+
+		//topic item text
+		.text
+			position: absolute
+			left: 0
+			bottom: -100%
+			z-index: 2
+			padding: 5% 6% 8% 6%
+			+transition(color $sec ease, bottom $sec_2 $easeing $sec_3)
+			+border_box
+			color: #fff
+			&:hover
+				color: $c_red
+			h2, h3
+				width: 60%
+				margin: 0
+				line-height: 1.2em		
+			h3
+				margin-bottom: 8px
+				font-size: 24px
+			h2
+				margin-bottom: 20px
+				font-size: 30px
+			> p
+				width: 60%
+				height: 110px
+				margin-bottom: 30px
+				line-height: 1.5em
+				overflow: hidden
+				
+			.topic_btn
+				display: block
+				position: relative
+				z-index: 2
+				width: 60%
+				height: 50px
+				color: #fff
+				font-size: 34px
+				font-weight: bold
+				font-style: normal
+				border-radius: 10px
+				overflow: hidden
+				div, i
+					+btnTrans()
+				div
+					display: table
+					position: relative
+					z-index: 1
+					width: 100%
+					height: 100%
+					background: $c_red
+					p
+						display: table-cell
+						vertical-align: middle
+						text-align: center
+					span, i
+						display: inline-block
+						text-indent: 0
+					span
+						position: relative
+						top: -3px
+						margin-left: 5px
+						font-size: 25px
+						text-indent: 0
+					i
+						font-style: normal
+
+				&:after
+					content: ''
+					display: table-cell
+					position: absolute
+					right: 1px
+					top: 0
+					z-index: 0
+					width: 50px
+					height: 100%
+					line-height: 48px
+					vertical-align: middle
+					font-style: normal
+					font-size: 30px
+					border-radius: 0 10px 10px 0
+					+bg_mix(rgba(255,255,255,.9), icon_arr_r_red, svg, no-repeat center)
+					color: $c_gray
+			.topic_btn
+				&:hover
+					div
+						text-indent: 50px
+						+transform(translateX(-50px))
+					&:after
+						right: 0
+
+		
+
+	.slider_btn
+		+transition(padding $sec ease, left $sec_2 ease $sec_3, right $sec_2 ease $sec_3)
+		&.prev
+			left: -100%
+		&.next
+			right: -100%
+
+	//topic trans
+	&.trans
+		.slider_btn
+			&.prev
+				left: 0%
+			&.next
+				right: 0%
+		.item
+			&:nth-child(2)
+				box-shadow: 0 0 20px rgba(0,0,0,.7)
+			.pic
+				&:after
+					width: 100%
+					+transform(translateX(0))
+				&:before, .img
+					+transform(translateX(0))
+			.text
+				bottom: 0
+
+@media screen and (max-width: 1250px)
+	#topic
+		.item
+			.text
+				padding: 30px
+				h3, h2, > p
+					width: 100%
+				h3
+					font-size: 18px
+				h2
+					margin-bottom: 15px
+					font-size: 24px
+				> p
+					margin-bottom: 20px	
+					height: 90px
+				a
+					height: 40px
+					font-size: 24px
+					div
+						span
+							top: -2px
+							font-size: 18px
+@media screen and (max-width: 900px)
+	#topic
+		padding-top: 50px
+		height: auto !important
+		.title_m
+			display: block
+		.item
+			width: 100%
+			height: 50vh
+			border-bottom: 1px solid $c_purple
+			&:nth-child(2)
+				width: 100%
+				box-shadow: none !important
+			.pic
+				&:after
+					width: 100%
+					+transform(translateX(0))
+				&:before, .img
+					+transform(translateX(0))
+			.text
+				bottom: 0
+				h3, h2, > p
+					width: 60%
+				a
+					width: 200px
+					&:after
+						width: 40px
+					&:hover
+						div
+							text-indent: 40px
+							+transform(translateX(-40px))
+		.slider_btn
+			top: 0
+			margin-top: 0
+			// background-color: $c_purple
+			&.prev
+				left: auto !important
+				right: 50px !important
+			&.next
+				right: 0
+			&:hover
+				padding: 0 !important
+
+@media screen and (max-width: 800px)
+	#topic
+		.item
+			.text
+				> p
+					height: 68px	
+@media screen and (max-width: 700px)
+	#topic
+		.item
+			height: 70vh
+@media screen and (max-width: 600px)
+	#topic
+		.item
+			.text
+				h3, h2, > p
+					width: 60%
+				a
+					width: 200px
+@media screen and (max-width: 450px)
+	#topic
+		.item
+			.text
+				h3, h2, > p, a
+					width: 100%
+				h3
+					font-size: 16px
+				h2
+					font-size: 20px
+				> p
+					font-size: 14px
+				a
+					font-size: 22px
+					span
+						top: 0px
+						font-size: 15px
+
+/* min-height ========== */
+@media screen and (max-height: 900px)
+	#topic
+		height: 100vh

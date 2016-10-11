@@ -1,0 +1,129 @@
+/* mixSlider.css ==============================================*/
+@import import
+
+// body
+// 	&.video_screen
+// 		#header
+// 			+box-shadow(0 1px 2px rgba(0,0,0,.6))
+// 		.mix_screen
+// 			padding-bottom: 30px
+// 			background-image: none
+// 		.mix_pager
+// 			bottom: 35px
+.mix_slider, .mix_screen
+	float: left
+	width: 100%
+	height: 100%
+.mix_slider
+	position: relative
+.mix_screen
+	// padding-top: 50px
+	+border_box
+	.video, .pic, video
+		// display: none
+		float: left
+		width: 100%
+		height: 100%
+		background-position: center
+	.video
+		background-size: cover
+	.pic
+		background-size: cover
+.mix_tar
+	display: none
+	position: absolute
+	left: 0
+	top: 0
+	width: 100%
+	height: 100%
+	&.in
+		z-index: 1
+	&.out
+		z-index: 0
+.mix_pager
+	display: none
+	position: absolute
+	left: 0
+	bottom: 10px
+	z-index: 11
+	width: 100%
+	text-align: center
+	+transition($sec ease)
+	a
+		display: inline-block
+		width: 10px
+		height: 10px
+		margin: 0 5px
+		background: #fff
+		+border-radius(50%)
+		cursor: pointer
+		+transition($sec ease)
+		&:hover
+			+transform(scale(1.2))
+		&.on
+			background: $c_red
+
+.video_screen
+	.volume_btn
+		display: block
+.volume_btn
+	display: none
+	position: absolute
+	right: 2%
+	bottom: 30px
+	z-index: 10
+	width: 30px
+	height: 30px
+	cursor: pointer
+	+bg_img(volume_btn,png,no-repeat 0 0)
+	+background-size(auto 30px)
+	+transition(transform $sec ease)
+	&.muted
+		background-position: -30px 0
+	&:hover
+		+transform(scale(1.2))
+
+.mix_btn
+	display: none
+	position: absolute
+	z-index: 100
+	top: 25%
+	width: 33px
+	height: 50%
+	margin-top: -25px
+	cursor: pointer
+	// +bg_img(slider_btn,png,no-repeat center)
+	+btnTrans
+	&.mix_prev
+		left: 20px
+		+bg_img(slider_btn_prev,png,no-repeat center)
+		background-size: auto 50px
+	&.mix_next
+		right: 20px
+		+bg_img(slider_btn_next,png,no-repeat center)
+		background-size: auto 50px
+	&:hover
+		&.mix_prev
+			left: 10px
+		&.mix_next
+			right: 10px
+
+
+@media screen and (max-width:1050px)
+	.mix_btn
+		width: 50px
+		&.mix_prev, &.mix_next
+			background-size: auto 40px
+		&.mix_prev
+			left: 0
+		&.mix_next
+			right: 0
+
+@media screen and (max-width:800px)
+	.mix_screen
+		.video
+			background-size: cover
+	.mix_btn
+		&.mix_prev, &.mix_next
+			background-size: auto 30px
+

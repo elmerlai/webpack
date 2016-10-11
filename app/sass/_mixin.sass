@@ -1,0 +1,65 @@
+@mixin bg_full($bg,$file,$value)     
+	background: url("#{$bg_path}#{$bg}.#{$file}") $value
+	background-size: cover
+
+@mixin bg_img($bg,$file,$value)
+	background: url("#{$bg_path}#{$bg}.#{$file}") $value
+	background-size: auto
+
+@mixin bg_mix($bgColor,$bg,$file,$value)
+	background: $bgColor url("#{$bg_path}#{$bg}.#{$file}") $value
+	background-size: auto
+
+@mixin bg_xy($xy)
+	background-position: $xy
+
+@mixin border_box()
+	box-sizing: border-box
+
+@mixin boxShadow()
+	+box-shadow(0 0 5px rgba(0,0,0,.5))
+
+@mixin textShadow()
+	+text-shadow(0 0 5px rgba(0,0,0,.7))
+
+@mixin btnTrans()
+	+transition($sec ease)
+
+@mixin placeholder
+	&::-webkit-input-placeholder
+		@content
+	&:-moz-placeholder
+		@content
+	&::-moz-placeholder
+		@content
+	&:-ms-input-placeholder
+		@content
+
+@mixin keyframes($name)  
+	@-webkit-keyframes #{$name}  
+		@content
+	@-moz-keyframes #{$name}  
+		@content  
+	@-ms-keyframes #{$name}  
+		@content  
+	@keyframes #{$name}  
+		@content 
+
+@mixin animation($content)  
+	-webkit-animation: $content  
+	-moz-animation: $content  
+	-o-animation: $content  
+	animation: $content 
+
+// ex:
+// +keyframes(slide-down)
+// 	0%
+// 		opacity: 1
+// 	90%
+// 		opacity: 0
+
+// div
+// 	width: 100px
+// 	height: 100px
+// 	background: black
+// 	@include animation('slide-down 5s')

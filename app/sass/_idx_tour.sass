@@ -1,0 +1,448 @@
+/* idx_tour.css ==============================================*/
+#tour
+	position: relative
+	float: left
+	clear: both
+	width: 100%
+	+bg_img(mountain_bg, png, fixed no-repeat center 0)
+	+background-size(100% auto)
+	.line
+		position: absolute
+		left: 50%
+		top: 0
+		z-index: 0
+		width: 3px
+		height: 100%
+		background: $c_gray_2
+		+transform(translateX(-50%))
+	.bg
+		position: absolute
+		left: 0
+		top: 50vh
+		z-index: 0
+		width: 100%
+	.group
+		position: relative
+		z-index: 1
+		width: 100%
+		max-width: 1000px
+		margin: 0 auto
+		.circle_icon
+			position: absolute
+			left: 50%
+			top: 5%
+			width: 40px
+			height: 40px
+			border-radius: 50%
+			padding: 8px
+			border: 3px solid $c_gray_2
+			+border_box
+			+transform(translateX(-50%))
+			span
+				display: block
+				width: 100%
+				height: 100%
+				background: $c_gray_2
+				border-radius: 50%
+			&.white
+				border-color: #fff
+				span
+					background: #fff
+		h1
+			position: relative
+			z-index: 2
+			padding-top: 5%
+			font-size: 30px
+			
+		.item
+			display: block
+			position: absolute
+			z-index: 1
+			left: 50%
+			top: 50%
+			width: 25%
+			// height: 0
+			// padding-bottom: 25%
+			border: 1px solid #fff
+			box-shadow: 0 1px 20px rgba(0,0,0,.5)
+			overflow: hidden
+			img
+				display: block
+				width: 100%
+			.pic
+				display: block
+				position: relative
+				width: 100%
+				height: 0
+				padding-bottom: 100%
+				background-position: center
+				background-repeat: no-repeat
+				+background-size(cover)
+				+transition($sec_4 ease)
+				&:before
+					content: ''
+					display: block
+					position: absolute
+					left: 0
+					bottom: 0
+					z-index: 0
+					width: 100%
+					height: 50%
+					+background(linear-gradient(to top, rgba(0,0,0,.6), rgba(0,0,0,0)))
+			.text
+				position: absolute
+				left: 0
+				bottom: 0
+				z-index: 1
+				padding: 15px 20px
+				color: #fff
+				+border_box
+				+textShadow
+				a
+					color: #fff
+					+btnTrans
+					&:hover
+						color: $c_red
+				p, h3
+					margin: 0
+					line-height: 1.4em
+				p
+					font-size: 16px
+				h3
+					font-size: 20px
+					font-weight: normal
+			&.focus
+				width: 50%
+				// padding-bottom: 50%
+				z-index: 0
+				+transform(translate(-50%,-50%))
+				&:before
+					top: 0
+					+background(linear-gradient(to bottom, rgba(0,0,0,.6), rgba(0,0,0,0)))
+				.text
+					top: 10px
+					bottom: auto
+					p
+						font-size: 18px
+					h3
+						font-size: 24px
+			&.screen_80
+				+transform(translate(-50%,-50%) scale(0))
+				+transition($sec_4 ease)
+			&:hover
+				.pic
+					+transform(scale(1.2))
+			&.trans
+				+transform(translate(-50%,-50%) scale(1))
+
+			
+	.group_3
+		height: 70vh
+		.focus
+			margin-left: -11%
+		.item_1
+			margin: -9.5% 0 0 23.5%
+		.item_2
+			margin: 20% 0 0 9%
+
+	.group_4
+		height: 80vh
+		.focus
+			margin-top: -7%
+		.item_1
+			margin: -4.5% 0 0 -34%
+		.item_2
+			margin: -21.5% 0 0 34%
+		.item_3
+			margin: 23% 0 0 0
+
+	.group_5
+		height: 90vh
+		.focus
+			.text
+				padding-left: 12%
+		.item_1
+			margin: -18.5% 0 0 -35%
+		.item_2
+			margin: -27.5% 0 0 28.5%
+		.item_3
+			margin: 21% 0 0 -30%
+		.item_4
+			margin: 28% 0 0 22%
+
+.tour_menu
+	position: fixed
+	right: -105%
+	top: 50%
+	z-index: 10
+	width: 150px
+	// padding-left: 40px
+	text-align: center
+	background: rgba(255,255,255,.8)
+	box-shadow: 0 0 10px rgba(0,0,0,.5)
+	border-radius: 5px 0 0 5px
+	overflow: hidden
+	+transform(translateY(-50%))
+	+transition(right $sec_3 ease)
+	+border_box
+	&.trans
+		right: 0
+	&.in_tour_menu
+		right: 0
+		top: 15%
+		+transform(translateY(0))
+	.btn
+		display: none
+		// position: absolute
+		// left: 0
+		// top: -1px
+		// float: left
+		// width: 40px
+		// height: 100%
+		// background: $c_purple
+		// border-top: 1px solid $c_purple
+		// border-bottom: 1px solid $c_purple
+	.group
+		float: left
+		width: 100%
+	a
+		position: relative
+		display: block
+		width: 100%
+		padding: 10px 0
+		font-size: 18px
+		border-bottom: 1px dotted #ddd
+		cursor: pointer
+		+btnTrans
+		&:hover, &.on
+			color: #fff
+		&:hover
+			background: $c_brown
+		&.on
+			background: $c_red
+		&.on
+			&:before
+				content: ""
+				display: block
+				position: absolute
+				left: 0
+				top: 0
+				width: 30px
+				height: 100%
+				border-right: 1px solid rgba(255,255,255,.7)
+				+bg_mix($c_purple, icon_arr_l_white, svg, no-repeat center)
+				background-size: 30px auto
+
+@media screen and (max-width: 1400px)
+	.tour_menu
+		&.in_tour_menu
+			position: relative
+			left: 0
+			top: 0
+			width: 100%
+			margin-bottom: 30px
+			background: none
+			box-shadow: none
+			a
+				display: inline-block
+				width: auto
+				margin-bottom: 10px
+				padding: 5px 25px
+				border: none
+				&:hover
+					background: $c_purple
+				&.on
+					background: $c_red
+				&.on
+					&:before
+						display: none
+
+@media screen and (max-width: 1300px)
+	#tour
+		.tour_menu
+			width: 100px
+			a
+				font-size: 15px
+				&.on
+					&:before
+						width: 5px
+						border: none
+						background-image: none
+
+@media screen and (max-width: 1200px)
+	#tour
+		.tour_menu
+			width: 30px
+			background: none
+			box-shadow: none
+			a
+				display: block
+				opacity: .8
+				width: 12px
+				height: 12px
+				padding: 0
+				margin: 15px 0
+				background: $c_red
+				text-indent: 100px
+				overflow: hidden
+				border-radius: 50%
+				span
+					display: none
+				&.on
+					background: $c_purple
+					&:before
+						display: none
+
+@media screen and (max-width: 1050px)
+	#tour
+		background-attachment: scroll
+		background-position: center -50px
+		.group
+			h1
+				text-align: center
+			&:first-child
+				padding-top: 30px
+				h1
+					margin-top: -30px
+				.circle_icon
+					display: none
+		.group_5
+			height: 90vh
+			.focus
+				.text
+					padding-left: 12%
+			.item_1
+				margin-left: -34%
+			.item_2
+				margin-left: 34%
+			.item_4
+				margin-left: 30%
+
+@media screen and (max-width: 900px)
+	#tour
+		.group
+			.item
+				+transform(translate(-50%,-50%) scale(1) !important)
+
+@media screen and (max-width: 800px)
+	#tour
+		.group_3
+			height: 620px
+		.group_4
+			height: 700px
+			.focus
+				margin-top: -3%
+			.item_1
+				margin: -0.5% 0 0 -34%
+			.item_2
+				margin: -17.5% 0 0 34%
+			.item_3
+				margin: 27% 0 0 0
+		.group_5
+			height: 820px
+@media screen and (max-width: 700px)
+	#tour
+		.group_3
+			height: 520px
+		.group_4
+			height: 600px
+		.group_5
+			height: 720px
+
+@media screen and (max-width: 650px)
+	#tour
+		border-top: 5px solid $c_purple
+		.line, .circle_icon
+			display: none
+		.group
+			height: auto !important
+			&:first-child
+				padding-top: 0
+				h1
+					margin-top: 0
+			h1
+				margin: 20px 0 30px 0
+				font-size: 24px
+			.item
+				float: left
+				position: relative
+				left: 0	 !important
+				top: 0 !important
+				width: 50%
+				// padding-bottom: 50%
+				margin: 0
+				border: none
+				border-top: 1px solid #fff
+				+border_box
+				+transform(translate(0,0)  scale(1) !important) 
+				box-shadow: none
+				&:first-child
+					border-top: none
+				&.focus
+					position: relative
+					width: 100%
+					// padding-bottom: 100%
+					margin: 0
+					&:before
+						top: auto
+						bottom: 0
+						+background(linear-gradient(to top, rgba(0,0,0,.6), rgba(0,0,0,0)))
+					.text
+						top: auto
+						bottom: 0
+						padding-left: 20px
+						p
+							font-size: 16px
+						h3
+							font-size: 20px
+				&.item_1, &.item_3
+					clear: left
+					&:before
+						content: ""
+						position: absolute
+						right: 0
+						top: 0
+						z-index: 1
+						width: 1px
+						height: 100%
+						background: #fff
+					// border-right: 1px	solid #fff
+		.group_4
+			.item
+				&.item_3
+					width: 100%
+					// padding-bottom: 100%
+					&:before
+						display: none
+
+	.tour_menu
+		&.in_tour_menu
+			a
+				padding: 5px 15px
+				font-size: 15px
+
+@media screen and (max-width: 480px)
+	#tour
+		.group
+			.item
+				.text
+					p
+						font-size: 13px
+					h3
+						font-size: 15px
+
+@media screen and (max-width: 400px)
+	.tour_menu
+		&.in_tour_menu
+			margin-bottom: 10px
+			a
+				padding: 5px 10px
+
+@media screen and (min-width: 801px) and (max-height: 950px)
+	#tour
+		.group_3
+			height: 700px
+		.group_4
+			height: 800px
+		.group_5
+			height: 920px

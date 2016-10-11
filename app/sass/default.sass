@@ -1,0 +1,161 @@
+@import import
+
+/* bisic ===================================================================*/
+.clearfix
+  &:after 
+    content: "."
+    display: block
+    height: 0
+    clear: both
+    visibility: hidden
+.clearfix
+  display: inline-block
+*
+  html
+    .clearfix
+      height: 1%
+.clearfix
+  display: block
+
+html
+  min-height: 100%
+
+body
+  position: relative
+  height: auto
+  min-height: 100%
+  text-align: left
+  -webkit-text-size-adjust: none
+  font-size: 15px
+  color: $color
+  // background: $color_bg
+  line-height: 1.8em
+  font-family: "微軟正黑體", Arial, Helvetica, sans-serif
+  letter-spacing: 1px
+  overflow-x: hidden
+  &.lock
+    overflow: hidden
+a
+  color: $color
+  text-decoration: none
+  &:hover
+    color: $color_hover
+
+strong
+  font-size: $font_l
+
+ol li
+  list-style: decimal outside
+  margin-left: 23px
+
+hr
+  border: 1px solid #333
+  border-top: none
+  margin-bottom: 15px
+
+h1, h2, h3, h4, h5, h6, p
+  margin: 0
+  
+.input, .select, .textarea
+  float: left
+  width: 100%
+  padding: 0 5px
+  border: 1px solid #ccc
+  background: #fff
+  color: #666
+  outline:  none
+  +border_box
+  +border-radius(5px)
+
+.input, .select
+  height: 40px
+  line-height: 40px
+.select
+  cursor: pointer
+
+.textarea
+  height: 150px
+  padding: 5px
+
+.full_bg, .center_bg
+  position: relative
+  overflow: hidden
+  img
+    position: absolute
+
+.placeholder_form p
+  display: inline-block
+  position: relative
+  label
+    position: absolute
+    left: 0
+    width: 100%
+    height: 100%
+    line-height: 24px
+    text-align: left
+    text-indent: 5px
+    cursor: pointer
+  input
+    text-indent: 5px
+
+.hover_fade
+  > img
+    +opacity(1)
+    +transition(all .5s) 
+  &:hover > img
+    +opacity(.85)
+
+.hover_scale
+  > img
+    +transition(all .5s) 
+  &:hover > img
+    +transform(scale(1.1)) 
+
+.video_h, .poster_h, .square_h
+  overflow: hidden
+
+.video_icon
+  position: relative
+  .icon
+    display: block
+    position: absolute
+    left: 50%
+    top: 50%
+    width: 50px
+    height: 50px
+    margin: -25px 0 0 -25px
+    img
+      width: 100%
+      height: 100%
+
+.edit_wrap
+  clear: both
+  width: 100%
+  line-height: 1.8em
+  h1, h2, h3, h4, h5, h6, p, img, video, iframe
+    margin-bottom: 12px
+  img, video, iframe
+    margin-top: 10px
+  h1
+    font-size: 20px
+  h2
+    font-size: 18px
+  h3
+    font-size: 16px
+  h4
+    font-size: 15px
+  h5
+    font-size: 22px
+  h6
+    font-size: 24px
+  img
+    max-width: 100%
+    height: auto !important
+    margin-bottom: 20px
+    // +box-shadow(0 1px 10px rgba(0,0,0,.8))
+  video
+    width: 100%
+    background-size: cover
+    +box-shadow(0 1px 10px rgba(0,0,0,.8))
+  iframe
+    width: 100%

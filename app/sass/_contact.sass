@@ -1,0 +1,306 @@
+/* contact.css ==============================================*/
+// +keyframes(empty_check)
+// 	0%
+// 		left: -10px
+// 	20%
+// 		left: 10px
+// 	40%
+// 		left: -10px
+// 	60%
+// 		left: 10px
+// 	80%
+// 		left: -10px
+// 	100%
+// 		left: 0
+
+.contact_bg
+	+bg_img(mountain_bg, png, fixed no-repeat center 0)
+	+background-size(cover)
+
+.contact_detail
+	padding-bottom: 60px
+.contact
+	position: relative
+	max-width: 1000px
+	// @include animation('empty_check 1.5s')
+	.top
+		position: absolute
+		left: 0
+		top: 0
+		width: 100%
+		margin-top: -8%
+		padding: 0 10%
+		+border_box
+		.left
+			float: left
+			width: 20%
+			height: 0
+			padding-bottom: 20%
+			margin-right: 5%
+			border-radius: 50%
+			border: 2px solid #fff
+			overflow: hidden
+			+border_box
+			+boxShadow
+			+bg_img(contact_pic,png,no-repeat center)
+			+background-size(cover)
+		.right
+			float: left
+			width: 75%
+			padding-top: 5%
+			color: #fff
+			.share
+				margin-bottom: 30px
+			p
+				margin-bottom: 10px
+				font-size: 18px
+			h2
+				font-size: 30px
+
+	.form
+		width: 100%
+		padding: 15% 50px 50px 50px
+		margin-top: 9%
+		border-radius: 15px
+		// +background(linear-gradient(to bottom, $c_brown, $c_brown_2))
+		background: $c_red
+		+border_box
+		.left
+			float: left
+			width: 50%
+			p
+				padding-left: 120px
+			span
+				position: absolute
+				left: 0
+				top: 0
+				width: 90px
+				text-align: right
+		.right
+			float: right
+			width: 45%
+		p
+			position: relative
+			margin-bottom: 20px
+			color: #fff
+			font-size: 20px
+			span
+				display: block
+				padding: 0 0 10px 0
+			select, input, textarea
+				width: 100%
+				padding: 0 0 10px 10px
+				background: none
+				border: none
+				border-left: 1px solid #fff
+				border-bottom: 1px solid #fff
+				outline: none
+				+border_box
+			input, textarea
+				color: #fff
+				+placeholder 
+					color: #fff
+			option
+				color: #333
+			textarea
+				height: 157px
+				+placeholder 
+					font-size: 30px
+	.btn_wrap
+		float: left
+		clear: both
+		width: 100%
+		margin: 20px 0
+		text-align: center
+		.send
+			display: inline-block
+			position: relative
+			width: 200px
+			height: 40px
+			line-height: 40px
+			border-radius: 10px
+			font-size: 18px
+			background: #fff
+			cursor: pointer
+			+btnTrans
+			&:hover
+				color: #fff
+				background: #000
+			&:after
+				content: "將有專人為您服務"
+				position: absolute
+				left: 0
+				bottom: -40px
+				width: 100%
+				color: #333
+				font-size: 16px
+
+.overlay_wrap
+	.contact 
+		.share
+			a
+				background-image: url("../images/share_overlay.png")
+
+
+@media screen and (max-width: 1050px)
+	.contact
+		.top
+			.right
+				padding-top: 3%
+				h2
+					font-size: 24px
+		.form
+			.left
+				p
+					padding-left: 100px
+					span
+						width: 80px
+			p
+				font-size: 18px
+				textarea
+					height: 148px
+					+placeholder 
+						font-size: 22px
+
+@media screen and (max-width: 850px)
+	.contact
+		.top
+			.right
+				.share
+					margin-bottom: 20px
+				p
+					margin-bottom: 0
+				h2
+					font-size: 20px
+		.form
+			padding: 15% 30px 35px 30px
+			.left
+				p
+					padding-left: 90px
+					span
+						width: 70px
+			.right
+				width: 43%
+			p
+				font-size: 16px
+				textarea
+					height: 145px
+					+placeholder 
+						font-size: 18px
+		.btn_wrap
+			margin-top: 0
+
+@media screen and (max-width: 700px)
+	.contact
+		.top
+			.right
+				padding-top: 2% 
+				.share
+					margin-bottom: 15px
+				p
+					font-size: 15px
+				h2
+					font-size: 18px
+		.form
+			padding: 90px 30px 35px 30px
+			.left, .right
+				width: 100%
+			.left
+				padding-bottom: 15px
+				margin-bottom: 15px
+				border-bottom: 1px dotted $c_orange
+			.right
+				p
+					&:first-child
+						margin-bottom: 5px
+				span
+					text-align: center
+			p
+				select, input
+					padding-left: 0
+					border-left: none
+				textarea
+					height: 150px
+					padding: 10px
+					border: 1px solid #fff
+					background: rgba(255,255,255,.1)
+					border-radius: 5px
+		.btn_wrap
+			margin-top: 0
+
+@media screen and (max-width: 600px)
+	.contact
+		.top
+			.right
+				padding-top: 0 
+			.share
+				a
+					width: 27px
+					height: 25px
+					margin-right: 10px
+@media screen and (max-width: 530px)
+	.contact
+		.top
+			.right
+				padding-top: 1% 
+				.share
+					a
+						width: 27px
+						height: 25px
+						margin-right: 10px
+				h2
+					position: absolute
+					left: 0
+					bottom: -40px
+					width: 100%
+					text-align: center
+		.form	
+			padding-top: 115px
+@media screen and (max-width: 470px)
+	.contact
+		.top
+			.right
+				padding-top: 0
+				.share
+					margin-bottom: 10px
+@media screen and (max-width: 400px)
+	.contact
+		.top
+			position: relative
+			left: 0
+			top: 20px
+			width: 100%
+			margin-top: 0
+			padding: 0 20px
+			.right
+				.share
+					display: none
+				p
+					margin-top: -8px
+					margin-bottom: 5px
+				h2
+					position: relative
+					left: 0
+					bottom: auto
+					line-height: 1.2em
+					font-size: 15px
+					text-align: left
+		.form	
+			padding-top: 115px
+			margin-top: 0
+			padding-right: 20px
+			padding-right: 20px
+			.left
+				padding-bottom: 0
+				margin-bottom: 10px
+				p
+					padding-left: 85px
+					span
+						width: 65px
+						text-align: left
+			p
+				font-size: 15px
+
+				textarea
+					+placeholder 
+						font-size: 18px
