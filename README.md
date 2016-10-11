@@ -2,10 +2,10 @@
 webpack template
 
 # Install npm
-  $ npm install
+<pre><code>$ npm install</code></pre>
 
 # Install bower
-  $ bower install
+<pre><code>$ bower install</code></pre>
 
 # Run server
-  $ npm run dev
+<pre><code>$ npm run dev</code></pre>
