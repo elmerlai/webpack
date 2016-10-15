@@ -16,9 +16,7 @@ var config = {
     this.module.noParse.push(new RegExp('^' + name + '$'));
   },
   entry: {
-    main: ['./app/main.jsx'],
-    vendors: ['react']
-    vendors: []
+    main: ['./app/main.jsx']
   },
   resolve: { alias: {} },
   output: {
@@ -50,15 +48,15 @@ var config = {
   },
   plugins: [
     new ExtractTextPlugin('css/[name].css'),
-    new webpack.optimize.CommonsChunkPlugin('vendors', 'js/vendors.js')
     new webpack.ProvidePlugin({ $: 'jquery', jQuery: 'jquery', 'window.jQuery': 'jquery' }),
-    new webpack.optimize.CommonsChunkPlugin('vendors', 'js/plugin.js')
+    new webpack.optimize.CommonsChunkPlugin('vendors', 'js/plugin.js'),
     // HTMLWebpackPluginConfig //auto join js
   ]
 };
 
 config.addVendor('react', bower_dir + '/react/react.min.js');
 config.addVendor('react-dom', bower_dir + '/react/react-dom.min.js');
+config.addVendor('vue', bower_dir + '/vue/dist/vue.min.js');
 config.addVendor('jquery', bower_dir + '/jquery/dist/jquery.min.js');
 config.addVendor('jquery-ui', bower_dir + '/jquery-ui/jquery.ui.min.js');
 
